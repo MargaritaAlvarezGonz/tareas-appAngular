@@ -10,8 +10,12 @@
             </div>
 
             <ul class="list-group">
-                <li *ngFor = "let tarea of listTareas" class="list-group-item">
+                <li *ngFor = "let tarea of listTareas; let i = index" class="list-group-item d-flex justify-content-between">
+                    <span class="cursor">
+                        <i class="fa-regular fa-circle"></i></span>
                     {{tarea.nombre}}
+                    <span class="cursor  text-danger" (click)="eliminarTarea(i)">
+                        <i class="fa-solid fa-trash"></i></span>
                 </li>
             </ul>
         </div>
